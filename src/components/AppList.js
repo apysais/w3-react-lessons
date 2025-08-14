@@ -1,7 +1,21 @@
 import React from 'react';
 
+/*
+- pass props and use reduce array, check line 6
 function Car(props) {
     const { index, brand, id } = props;
+    return (
+        <li id={`car-${index}`} data-db-id={id}>Im a {brand}</li>
+    );
+}
+*/
+
+/**
+ * Or set the props directly in the function parameters.
+ * @param {*} param0 
+ * @returns 
+ */
+function Car({ index, brand, id }) {
     return (
         <li id={`car-${index}`} data-db-id={id}>Im a {brand}</li>
     );
