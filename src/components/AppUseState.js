@@ -7,7 +7,7 @@ const AppUseState = () => {
     const [sports, setSports] = useState([
         {
             id: 1,
-            name: 'Soccer'
+            name: 'Soccerxx'
         },
         {
             id: 2,
