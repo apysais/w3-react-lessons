@@ -139,7 +139,7 @@ function Search() {
     <input
       type="text"
       value={searchTerm}
-      onChange={e => setSearchTerm(e.target.value)}
+      onChange={(e) => setSearchTerm(e.target.value)}
       placeholder="Search..."
     />
   );
@@ -214,14 +214,17 @@ export default DataList;
 4. Main Entry (index.js)
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {createRoot} from 'react-dom/client';
+import {createPortal} from "react-dom";
 import { DataProvider } from './DataContext';
 import Search from './Search';
 import Filter from './Filter';
 import Paginate from './Paginate';
 import DataList from './DataList';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <DataProvider>
     <>
       {ReactDOM.createPortal(<Search />, document.getElementById('search'))}
@@ -229,8 +232,7 @@ ReactDOM.render(
       {ReactDOM.createPortal(<Paginate />, document.getElementById('paginate'))}
       {ReactDOM.createPortal(<DataList />, document.getElementById('list-data'))}
     </>
-  </DataProvider>,
-  document.getElementById('root') // Can be hidden or used for other layout
+  </DataProvider>
 );
 
 Result

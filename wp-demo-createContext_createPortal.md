@@ -196,14 +196,17 @@ export default Paginate;
 index.js (Main Entry)
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, {createRoot} from 'react-dom/client';
+import {createPortal} from "react-dom";
 import { WPProvider } from './WPContext';
 import Search from './Search';
 import Filter from './Filter';
 import Paginate from './Paginate';
 import PostList from './PostList';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
   <WPProvider>
     <>
       {ReactDOM.createPortal(<Search />, document.getElementById('search'))}
@@ -211,8 +214,7 @@ ReactDOM.render(
       {ReactDOM.createPortal(<Paginate />, document.getElementById('paginate'))}
       {ReactDOM.createPortal(<PostList />, document.getElementById('list-data'))}
     </>
-  </WPProvider>,
-  document.getElementById('root')
+  </WPProvider>
 );
 
 ✅ Summary
