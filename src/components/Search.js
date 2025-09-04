@@ -2,8 +2,9 @@ import React from 'react';
 import { useData } from './DataContext';
 
 function Search() {
-    const { searchTerm, setSearchTerm } = useData();
+    const { data, searchTerm, setSearchTerm } = useData();
     console.log('init search component');
+    console.log(data);
     return (
         <>
             <p>Search</p>
