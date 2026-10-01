@@ -7,7 +7,7 @@ const Layout = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/reactjs/webpack-demo-git-copilot/router.html">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
 
